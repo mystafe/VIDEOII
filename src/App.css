@@ -41,6 +41,12 @@ body {
   font-weight: 700;
   margin: 0;
   color: var(--primary-color);
+  cursor: pointer;
+  user-select: none; /* Metnin seçilmesini engeller */
+}
+
+.App-header h1:hover {
+    opacity: 0.8;
 }
 
 .App-header p {
@@ -52,7 +58,7 @@ body {
   background: var(--card-background);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px S12px rgba(0,0,0,0.05);
   margin-bottom: 30px;
 }
 
@@ -78,6 +84,7 @@ h2 {
   font-size: 1rem;
   font-weight: 700;
   margin-right: 15px;
+  flex-shrink: 0;
 }
 
 .form-grid {
@@ -118,6 +125,7 @@ input[type="file"] {
   text-align: center;
   color: var(--subtle-text-color);
   transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
 }
 
 .upload-button.file-selected {
@@ -152,13 +160,23 @@ input[type="file"] {
   cursor: not-allowed;
 }
 
-/* Status Panel Stilleri */
-.status-panel p {
+.status-panel p.status-message {
   font-style: italic;
   color: var(--subtle-text-color);
 }
-.progress-bar-container { /* ... */ }
-.progress-bar { /* ... */ }
+.progress-bar-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  transition: width 0.4s ease-in-out;
+}
 .error-message { color: var(--error-color); font-weight: 500; }
 .result-container {
   background: #2d2d2d;
@@ -167,9 +185,31 @@ input[type="file"] {
   padding: 20px;
   margin-top: 20px;
   text-align: left;
-  white-space: pre-wrap;
-  word-wrap: break-word;
   max-height: 500px;
   overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+.report-content {
+  white-space: pre-wrap;
+  word-wrap: break-word;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.reset-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background-color: var(--success-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 30px;
+}
+
+.reset-button:hover {
+  opacity: 0.85;
 }
