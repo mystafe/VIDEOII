@@ -6,7 +6,8 @@ import './Spinner.css';
 import { config as defaultConfig } from './config.js';
 
 const Spinner = () => <div className="spinner"></div>;
-const socket = io("http://localhost:5001");
+// const socket = io("http://localhost:5001");
+const socket = io("https://videoii-server.onrender.com");
 
 function App() {
   const [logoClicks, setLogoClicks] = useState(0);
