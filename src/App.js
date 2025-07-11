@@ -68,7 +68,8 @@ function App() {
     formData.append('secondsPerBatch', secondsPerBatch);
     formData.append('frameInterval', frameInterval);
     try {
-      const response = await axios.post('http://localhost:5001/api/analyze', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+      // const response = await axios.post('http://localhost:5001/api/analyze', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+      const response = await axios.post('https://videoii-server.onrender.com/api/analyze', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
       setAnalysisStatus(prev => ({ ...prev, message: response.data.message }));
     } catch (error) {
       setAnalysisStatus({ ...analysisStatus, error: error.response?.data?.error || 'An upload error occurred.' });
