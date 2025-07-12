@@ -16,6 +16,7 @@ function App() {
   const [totalBatches, setTotalBatches] = useState(defaultConfig.TOTAL_BATCHES);
   const [secondsPerBatch, setSecondsPerBatch] = useState(defaultConfig.SECONDS_PER_BATCH);
   const [frameInterval, setFrameInterval] = useState(defaultConfig.FRAME_INTERVAL_SECONDS);
+  // const [socket2, setSocket2] = useState(defaultConfig.SOCKET);
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [analysisType, setAnalysisType] = useState('general');
@@ -84,6 +85,7 @@ function App() {
     setTotalBatches(defaultConfig.TOTAL_BATCHES);
     setSecondsPerBatch(defaultConfig.SECONDS_PER_BATCH);
     setFrameInterval(defaultConfig.FRAME_INTERVAL_SECONDS);
+    // setSocket(defaultConfig.SOCKET);
     setMaxBatchesAllowed(10);
     setLogoClicks(0);
     setSuperMode(false);

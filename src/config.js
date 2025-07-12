@@ -7,4 +7,5 @@ export const config = {
   TOTAL_BATCHES: 2,
   SECONDS_PER_BATCH: 30,
   FRAME_INTERVAL_SECONDS: 10,
+  SOCKET: "https://videoii-server.onrender.com"
 };
